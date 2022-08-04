@@ -43,7 +43,7 @@ jobs:
      - name: Upload AAB
        uses: actions/upload-artifact@v1
        with:
-         name: aab
+         name: apk
          path: app/build/outputs/bundle/debug/app.aab
 
  release:
@@ -87,6 +87,6 @@ jobs:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        with:
          upload_url: ${{ steps.create_release.outputs.upload_url }}
-         asset_path: aab/app.aab
+         asset_path: apk/app.aab
          asset_name: ${{ github.event.repository.name }}  ${{ steps.branch-name.outputs.current_branch }} v${{ github.run_number }}.${{ github.run_attempt }}.aab
          asset_content_type: application/zip
