@@ -32,8 +32,9 @@ jobs:
        run: |
         bash ./gradlew assembleDebug --stacktrace
         bash ./gradlew bundleDebug --stacktrace
-        ls -al app/build/outputs
+        ls -al app/build/outputs/bundle
         ls -al app/build/outputs/apk/debug/
+        ls -al ./
      - name: Upload APK
        uses: actions/upload-artifact@v1
        with:
