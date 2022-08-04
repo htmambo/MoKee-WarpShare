@@ -32,7 +32,7 @@ jobs:
        run: |
         bash ./gradlew assembleDebug --stacktrace
         bash ./gradlew bundleDebug --stacktrace
-        ls -al app/build/outputs/bundle
+        ls -al app/build/outputs/bundle/debug/
         ls -al app/build/outputs/apk/debug/
         ls -al ./
      - name: Upload APK
@@ -44,7 +44,7 @@ jobs:
        uses: actions/upload-artifact@v1
        with:
          name: aab
-         path: app/build/outputs/apk/debug/app-debug.aab
+         path: app/build/outputs/bundle/debug/app-debug.aab
 
  release:
    name: Release APK
